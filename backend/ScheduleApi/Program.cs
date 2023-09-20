@@ -1,8 +1,17 @@
+using Microsoft.EntityFrameworkCore;
+using ScheduleCore.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+// Add DbContext to the container.
+var connectionString = builder.Configuration.GetConnectionString("ScheduleDB");
+builder.Services.AddDbContext<ScheduleDB>(options => 
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
