@@ -11,7 +11,7 @@ import Swal from 'sweetalert2'
 })
 export class ConfigComponent implements OnInit {
 
-    parametros: Observable<Parametro[]>;
+    parametros!: Observable<Parametro[]>;
 
     constructor(private parametroService: ParametroService) { }
 

@@ -9,6 +9,9 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ConfigComponent } from './components/config/config.component';
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from './pipes/filter.pipe';
+import { SchedulerComponent } from './components/scheduler/scheduler.component';
+import { ManagerRoutesComponent } from './components/manager-routes/manager-routes.component';
+import { GeneretedScheduleComponent } from './components/genereted-schedule/genereted-schedule.component';
 
 @NgModule({
     declarations: [
@@ -16,7 +19,10 @@ import { FilterPipe } from './pipes/filter.pipe';
         HomeComponent,
         SidebarComponent,
         ConfigComponent,
-        FilterPipe
+        FilterPipe,
+        SchedulerComponent,
+        ManagerRoutesComponent,
+        GeneretedScheduleComponent
     ],
     imports: [
         BrowserModule,
