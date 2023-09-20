@@ -8,5 +8,5 @@ public class CursoCatedratico
     public int CodigoCatedratico { get; set; }
     [Key]
     public int CodigoCurso { get; set; }
-    public int Prioridad { get; set; }
+    public bool Prioridad { get; set; }
 }
