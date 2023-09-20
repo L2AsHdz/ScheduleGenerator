@@ -1,6 +1,6 @@
 namespace ScheduleCore.Models.ViewModels;
 
-public class CursoViewModel
+public class CursoDTO
 {
     public int CodigoCurso { get; set; }
     public string Nombre { get; set; }

@@ -9,6 +9,6 @@ public class Salon
     public string Nombre { get; set; }
     public int CapacidadMaxima { get; set; }
     public int CapacidadRecomendada { get; set; }
-    public int CodigoCarreraPreferida { get; set; }
+    public int? CodigoCarreraPreferida { get; set; }
     public string Ubicacion { get; set; }
 }

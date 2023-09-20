@@ -30,21 +30,24 @@ export class ConfigComponent implements OnInit {
     }
 
     async changeValue(param: Parametro) {
-        const { value: newValue } = await Swal.fire({
+        Swal.fire({
             title: 'Ingrese el  nuevo valor',
             input: 'text',
             inputLabel: `Valor actual: ${param.valor}`,
             showCancelButton: true
+        }).then(result => {
+            if (result.isConfirmed) {
+                if (!result.value)
+                    Swal.fire('Error', 'El nuevo valor no puede estar vacío', 'error');
+                else {
+                    param.valor = result.value;
+                    this.parametroService.updateParametro(param)
+                        .subscribe(() => {
+                            Swal.fire('Valor actualizado', `El valor de ${param.nombre} ha sido actualizado`, 'success');
+                        });
+                }
+            }
         });
 
-        if (!newValue) {
-            Swal.fire('Error', 'El nuevo valor no puede estar vacío', 'error');
-        };
-
-        param.valor = newValue;
-        this.parametroService.updateParametro(param)
-            .subscribe(() => {
-                Swal.fire('Valor actualizado', `El valor de ${param.nombre} ha sido actualizado`, 'success');
-            });
     }
 }

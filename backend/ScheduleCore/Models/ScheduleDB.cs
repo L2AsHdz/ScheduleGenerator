@@ -13,7 +13,6 @@ public class ScheduleDB: DbContext
     public DbSet<CursoCatedratico> CursoCatedratico { get; set; }
     public DbSet<CursoHorario> CursoHorario { get; set; }
     public DbSet<CursoSalon> CursoSalon { get; set; }
-    public DbSet<HorarioCatedratico> HorarioCatedratico { get; set; }
     public DbSet<Parametro> Parametro { get; set; }
     public DbSet<Salon> Salon { get; set; }
 

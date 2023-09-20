@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ScheduleCore.Models;
 using ScheduleCore.Models.ViewModels;
-using ScheduleCore.Services;
+using ScheduleCore.Services.Core;
 
 namespace ScheduleApi.Controllers;
 
@@ -10,16 +10,16 @@ namespace ScheduleApi.Controllers;
 public class ScheduleController : ControllerBase
 {
     private readonly ScheduleDB context;
-    private readonly ICoreService service;
+    private readonly CoreService service;
     
-    public ScheduleController(ScheduleDB context, ICoreService service)
+    public ScheduleController(ScheduleDB context, CoreService service)
     {
         this.context = context;
         this.service = service;
     }
 
     [HttpGet]
-    public ActionResult<IEnumerable<CursoHorarioViewModel>> Init()
+    public ActionResult<IEnumerable<CursoHorarioDTO>> Init()
     {
         var horario = service.Execute();
 
