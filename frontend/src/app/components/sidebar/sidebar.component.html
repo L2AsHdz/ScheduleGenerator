@@ -1,0 +1,48 @@
+<nav class="d-flex flex-nowrap sidebar">
+    <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary bg-danger" style="width: 300x;">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <i class="bi bi-table pe-none me-2" style="font-size: 20px;"></i>
+            <span class="fs-4">ScheduleGenerator</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a routerLink="home" class="nav-link link-body-emphasis" routerLinkActive="activo">
+                    <i class="bi bi-house pe-none me-2" style="font-size: 20px;"></i> Home
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link link-body-emphasis" routerLinkActive="activo">
+                    <i class="bi bi-plus-square pe-none me-2" style="font-size: 20px;"></i> Generar Horario
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link link-body-emphasis" routerLinkActive="activo">
+                    <i class="bi bi-clock-history pe-none me-2" style="font-size: 20px;"></i> Historial
+                </a>
+            </li>
+            <li>
+                <a routerLink="config" class="nav-link link-body-emphasis" routerLinkActive="activo">
+                    <i class="bi bi-gear pe-none me-2" style="font-size: 20px;"></i> Configuracion
+                </a>
+            </li>
+        </ul>
+        <hr>
+        <div class="dropdown">
+            <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-people-fill pe-none me-2"></i>
+                <strong>Sesion</strong>
+            </a>
+            <ul class="dropdown-menu text-small shadow">
+                <li><a class="dropdown-item" href="#">New project...</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

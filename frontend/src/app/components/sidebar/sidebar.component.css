@@ -1,0 +1,16 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    width: 300px;
+    background-color: #585858;
+    overflow-y: auto;
+}
+
+.activo {
+    background-color: #7da7d4; /* Cambia esto al color que desees para resaltar */
+    color: #fff; /* Cambia esto al color de texto que desees */
+    font-weight: bold; /* Cambia esto si deseas un texto en negrita */
+  }

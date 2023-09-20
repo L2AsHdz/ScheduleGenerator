@@ -14,11 +14,25 @@ public class ParametroController : ControllerBase
         this.context = context;
     }
     
-    [HttpGet(Name = "GetParametros")]
-    public IEnumerable<Parametro> Get()
+    [HttpGet]
+    public ActionResult<IEnumerable<Parametro>> Get()
     {
         var parametros = context.Parametro.ToList();
         
-        return parametros;
+        return Ok(parametros);
+    }
+
+    [HttpPut("{codigo:int}")]
+    public ActionResult<Parametro> Put(int codigo, [FromBody] Parametro parametro)
+    {
+        var param = context.Parametro.FirstOrDefault(p => p.CodigoParametro == codigo);
+
+        if (param == null) return NotFound();
+        
+        param.Valor = parametro.Valor;
+        
+        context.SaveChanges();
+
+        return Ok(param);
     }
 }

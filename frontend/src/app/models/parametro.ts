@@ -7,7 +7,7 @@ export interface Parametro {
 }
 
 export enum TipoParametro {
-    CONFIGURACION = 'CONFIGURACION',
-    PRIORIDAD = 'PRIORIDAD',
-    COMPORTAMIENTO = 'COMPORTAMIENTO',
+    CONFIGURACION = 0,
+    PRIORIDAD = 1,
+    COMPORTAMIENTO = 2,
 }
