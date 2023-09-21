@@ -1,3 +1,5 @@
+using System.Text.Json;
+
 namespace ScheduleCore.Models.ViewModels;
 
 public class CursoHorarioDTO
@@ -10,4 +12,17 @@ public class CursoHorarioDTO
     public TimeOnly HoraInicio { get; set; }
     public TimeOnly HoraFin { get; set; }
     public int Estado { get; set; }
+
+    // Sobreescribir ToString() para que se muestren todos los atributos como un Json
+    public override string ToString()
+    {
+        return $@"{{
+                    ""CodigoHorario"": {CodigoHorario},
+                    ""Curso"": {Curso.CodigoCurso},
+                    ""Carrera"": {Curso.Carrera.CodigoCarrera},
+                    ""Salon"": {Salon.NoSalon},
+                    ""HoraInicio"": ""{HoraInicio}"",
+                    ""HoraFin"": ""{HoraFin}""
+                }}";
+    }
 }

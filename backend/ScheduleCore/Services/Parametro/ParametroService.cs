@@ -70,6 +70,9 @@ public class ParametroService
             
             ParameterManager.Instance.ObligatoryPriority =
                 context.Parametro.Where(p => p.CodigoParametro == 18).FirstOrDefault()!.Valor == "1";
+            
+            ParameterManager.Instance.IgnoreMaxCapacity =
+                context.Parametro.Where(p => p.CodigoParametro == 19).FirstOrDefault()!.Valor == "1";
         }
         catch (Exception e)
         {

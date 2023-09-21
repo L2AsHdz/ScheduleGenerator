@@ -25,6 +25,7 @@ public class ParameterManager
     public bool CreateSections { get; set; }
     public bool ShowWarnings { get; set; }
     public bool EvenSemester { get; set; }
+    public bool IgnoreMaxCapacity { get; set; }
     
     private ParameterManager() { }
     

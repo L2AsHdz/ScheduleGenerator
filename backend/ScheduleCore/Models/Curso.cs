@@ -8,3 +8,8 @@ public class Curso
     public int CodigoCurso { get; set; }
     public string Nombre { get; set; }
 }
+
+public class CursoConAdvertencia: Curso
+{
+    public string Advertencia { get; set; }
+}
