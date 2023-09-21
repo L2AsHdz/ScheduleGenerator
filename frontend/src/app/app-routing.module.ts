@@ -11,7 +11,7 @@ const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'home', component: HomeComponent },
     { path: 'config', component: ConfigComponent },
-    { path: 'history', component: HistorialComponent },
+    { path: 'history/:id', component: HistorialComponent },
     { path: 'scheduler', component: ManagerRoutesComponent,
         children: [
             { path: 'generate', component: SchedulerComponent },

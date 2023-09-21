@@ -4,6 +4,11 @@ public class RequestData
 {
     public List<CursoHorarioRequest> Horario { get; set; }
     public List<CursoAdvertencia> Advertencias { get; set; }
+    public decimal PorcentajeEfectividad { get; set; }
+    public string Comentario { get; set; }
+    public string HoraInicio { get; set; }
+    public string HoraFin { get; set; }
+    public int DuracionPeriodo { get; set; }
 }
 
 public class CursoHorarioRequest

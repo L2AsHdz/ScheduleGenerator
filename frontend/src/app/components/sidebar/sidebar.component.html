@@ -17,7 +17,7 @@
                 </a>
             </li>
             <li>
-                <a routerLink="history" class="nav-link link-body-emphasis" routerLinkActive="activo">
+                <a [routerLink]="'history/' + localStorage.getItem('lastHorario')" class="nav-link link-body-emphasis" routerLinkActive="activo">
                     <i class="bi bi-clock-history pe-none me-2" style="font-size: 20px;"></i> Historial
                 </a>
             </li>

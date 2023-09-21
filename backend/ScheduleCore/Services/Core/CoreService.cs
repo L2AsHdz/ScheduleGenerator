@@ -56,7 +56,8 @@ public class CoreService
         // Obtener prioridades de salones
 
         //---------------------------------------Filtros y Ordenamiento---------------------------------------
-
+        var notAssignedCourses = new List<CursoAdvertencia>();
+        
         // Filtrar cursos por semestre
         List<CursoCarrera> filteredCourses;
 
@@ -66,8 +67,22 @@ public class CoreService
 
         // Filtrar por minimo asignaciones
         if (!param.IgnoreMinAssignments)
+        {
+            var  cursosFaltantes = 
+                filteredCourses.Where(c => c.CantidadAsignaciones < param.MinAssignments)
+                    .Select(c => new CursoAdvertencia()
+                    {
+                        CodigoCurso = c.CodigoCurso,
+                        Nombre = cursos.Find(c2 => c2.CodigoCurso == c.CodigoCurso).Nombre!,
+                        Advertencia = "El curso no cumple con el minimo de asignaciones"
+                    })
+                    .ToList();
+            notAssignedCourses.AddRange(cursosFaltantes);
+
             filteredCourses =
                 filteredCourses.Where(c => c.CantidadAsignaciones >= param.MinAssignments).ToList();
+            
+        }
 
         // Ordenar dependiendo del valor del parametro LastSemesterPriority
 
@@ -78,8 +93,6 @@ public class CoreService
         //---------------------------------------------Asignaciones---------------------------------------------
 
         var assignedCourses = new List<CursoHorarioDTO>();
-
-        var notAssignedCourses = new List<CursoAdvertencia>();
 
         var horaActual = param.StartHour;
 

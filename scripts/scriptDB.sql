@@ -331,6 +331,17 @@ VALUES
     ('behavior.ignoreMaxCapacity', 0, 'COMPORTAMIENTO', 'Ignorar la capacidad maxima del salon')
 ;
 
+CREATE TABLE IF NOT EXISTS Horario (
+    codigoHorario INT NOT NULL AUTO_INCREMENT,
+    porcentajeEfectividad DECIMAL(5,2) NOT NULL,
+    fechaCreacion DATETIME NOT NULL,
+    horaInicio TIME NOT NULL,
+    horaFin TIME NOT NULL,
+    duracionPeriodo INT NOT NULL,
+    comentario VARCHAR(250) NULL,
+    PRIMARY KEY (codigoHorario)
+);
+
 CREATE TABLE IF NOT EXISTS  CursoHorario (
     idRegistro INT NOT NULL AUTO_INCREMENT,
     codigoHorario INT NOT NULL,
@@ -341,6 +352,7 @@ CREATE TABLE IF NOT EXISTS  CursoHorario (
     horaInicio TIME NOT NULL,
     horaFin TIME NOT NULL,
     PRIMARY KEY (idRegistro),
+    CONSTRAINT FOREIGN KEY (codigoHorario) REFERENCES Horario(codigoHorario) ON UPDATE RESTRICT ON DELETE RESTRICT,
     CONSTRAINT FOREIGN KEY (codigoCurso) REFERENCES Curso(codigoCurso) ON UPDATE RESTRICT ON DELETE RESTRICT,
     CONSTRAINT FOREIGN KEY (codigoCarrera) REFERENCES Carrera(codigoCarrera) ON UPDATE RESTRICT ON DELETE RESTRICT,
     CONSTRAINT FOREIGN KEY (codigoCatedratico) REFERENCES Catedratico(codigoCatedratico) ON UPDATE RESTRICT ON DELETE RESTRICT,
@@ -355,5 +367,6 @@ CREATE TABLE IF NOT EXISTS CursoAdvertencia (
     nombre VARCHAR(100) NOT NULL,
     advertencia VARCHAR(250) NOT NULL,
     PRIMARY KEY (idRegistro),
+    CONSTRAINT FOREIGN KEY (codigoHorario) REFERENCES Horario(codigoHorario) ON UPDATE RESTRICT ON DELETE RESTRICT,
     CONSTRAINT FOREIGN KEY (codigoCurso) REFERENCES Curso(codigoCurso) ON UPDATE RESTRICT ON DELETE RESTRICT
 );

@@ -4,6 +4,20 @@
 <div class="row">
     <div class="col-2"></div>
     <div class="col">
-        <p>Holaaaaaaaaaaa</p>
+        <h3><strong>Historial de Horarios</strong>: Horario {{idhorario}}</h3>
     </div>
+    <div class="col">
+        <div class="d-flex justify-content-evenly">
+            <button (click)="prev()" class="btn btn-primary rounded-circle p-3 lh-1" type="button">
+                <i class="bi bi-arrow-left" style="font-size: 25px;"></i>
+            </button>
+            <button (click)="next()" class="btn btn-primary rounded-circle p-3 lh-1" type="button">
+                <i class="bi bi-arrow-right" style="font-size: 25px;"></i>
+            </button>
+        </div>
+    </div>
+</div>
+<app-schedule-render [responseData]="responseData"></app-schedule-render>
+<div class="row">
+    <br><br><br>
 </div>

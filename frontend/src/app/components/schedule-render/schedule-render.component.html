@@ -1,0 +1,63 @@
+<div class="row">
+    <br><br>
+</div>
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col">
+        <span *ngFor="let c of responseData.carreras" class="badge me-3" [style.background]="c.color"
+            [style.font-size.px]="20" [style.color]="'#080306'">{{c.nombre}}</span>
+    </div>
+    <div class="col">
+        <h4><strong>Porcentaje de efectividad: {{(responseData.porcentajeEfectividad*100).toFixed(2)}}%</strong></h4>
+    </div>
+    <div class="col">
+        <h4><strong>Cursos Asignados: {{responseData.horario.length}}</strong></h4>
+    </div>
+</div>
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col me-3">
+        <table class="table table-hover table-sm" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>Horario/Salon</th>
+                    <th *ngFor="let s of responseData.salones;">{{s.nombre}}</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let i of generarIteraciones()">
+                    <td>{{i.horaInicio}} - {{i.horaFin}}</td>
+                    <td *ngFor="let c of getCursos(i.horaInicio)">
+                        <div class="card text-center">
+                            <div *ngIf="c.curso.nombre" class="card-body" [style.background]="c.curso.carrera.color">
+                                <p class="card-text"><strong>{{c.curso.nombre}}</strong></p>
+                                <p class="card-text">{{c.catedratico.nombre}}</p>
+                                <p class="card-text">Semestre:{{c.curso.semestre}}</p>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+              <th scope="col">Codigo</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Advertencia</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let a of responseData.advertencias">
+              <td>{{a.codigoCurso}}</td>
+              <td>{{a.nombre}}</td>
+              <td>{{a.advertencia}}</td>
+            </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
