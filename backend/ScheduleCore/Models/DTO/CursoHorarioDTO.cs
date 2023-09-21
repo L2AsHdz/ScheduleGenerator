@@ -20,6 +20,7 @@ public class CursoHorarioDTO
                     ""CodigoHorario"": {CodigoHorario},
                     ""Curso"": {Curso.CodigoCurso},
                     ""Carrera"": {Curso.Carrera.CodigoCarrera},
+                    ""Catedratico"": {Catedratico.CodigoCatedratico},
                     ""Salon"": {Salon.NoSalon},
                     ""HoraInicio"": ""{HoraInicio}"",
                     ""HoraFin"": ""{HoraFin}""

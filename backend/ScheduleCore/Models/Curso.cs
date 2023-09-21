@@ -12,4 +12,9 @@ public class Curso
 public class CursoConAdvertencia: Curso
 {
     public string Advertencia { get; set; }
+
+    public override string ToString()
+    {
+        return $"{{ Codigo: {CodigoCurso}, Nombre: {Nombre}, Advertencia: {Advertencia} }}";
+    }
 }

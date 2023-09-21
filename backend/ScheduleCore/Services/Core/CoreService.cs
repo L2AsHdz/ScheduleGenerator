@@ -1,3 +1,4 @@
+using System.Text.Json;
 using ScheduleCore.Models;
 using ScheduleCore.Models.ViewModels;
 using ScheduleCore.Services.Parametro;
@@ -17,11 +18,8 @@ public class CoreService
         this.param = ParameterManager.Instance;
     }
 
-    public IEnumerable<CursoHorarioDTO> Execute()
+    public ResponseData Execute()
     {
-        var horario = new List<CursoHorarioDTO>();
-
-
         //---------------------------------------------Obtener Datos---------------------------------------------
 
         // Obtener parametros
@@ -80,21 +78,6 @@ public class CoreService
         //---------------------------------------------Asignaciones---------------------------------------------
 
         var assignedCourses = new List<CursoHorarioDTO>();
-        // assignedCourses.Add(new CursoHorarioDTO()
-        // {
-        //     Curso = new CursoDTO() { Semestre = 1, Carrera = new Carrera() { CodigoCarrera = 1 } },
-        //     Salon = new Salon() { NoSalon = 1 }, HoraInicio = TimeOnly.Parse("14:00:00")
-        // });
-        // assignedCourses.Add(new CursoHorarioDTO()
-        // {
-        //     Curso = new CursoDTO() { Semestre = 1, Carrera = new Carrera() { CodigoCarrera = 1 } },
-        //     Salon = new Salon() { NoSalon = 2 }, HoraInicio = TimeOnly.Parse("14:00:00")
-        // });
-        // assignedCourses.Add(new CursoHorarioDTO()
-        // {
-        //     Curso = new CursoDTO() { Semestre = 4, Carrera = new Carrera() { CodigoCarrera = 1 } },
-        //     Salon = new Salon() { NoSalon = 5 }, HoraInicio = TimeOnly.Parse("16:00:00")
-        // });
 
         var notAssignedCourses = new List<CursoConAdvertencia>();
 
@@ -109,7 +92,19 @@ public class CoreService
         foreach (var c in filteredCourses)
         {
             var cursoHorario = new CursoHorario();
-            var salonHorario = new { salon = 0, hora = horaActual};
+            var catedraticosCursos = (from cat in catedraticos
+                join curcat in cursosCatedraticos on cat.CodigoCatedratico equals curcat.CodigoCatedratico
+                where curcat.CodigoCurso == c.CodigoCurso
+                select new
+                {
+                    cat.CodigoCatedratico,
+                    cat.HoraEntrada,
+                    cat.HoraSalida,
+                    curcat.Prioridad
+                }).ToList();
+
+
+            var salonHorario = new { salon = 0, hora = horaActual };
 
             var salonesHorario = (from s in salones
                 from h in horarios
@@ -130,32 +125,43 @@ public class CoreService
                 )
                 .Select(sh => sh).ToList();
 
+            var salonesHorarioTemp = salonesHorario;
 
             if (param.CapacityPriority)
             {
-                salonHorario = salonesHorario.Where(sh => sh.ocupacionRecomendada <= 1)
+                salonesHorarioTemp = salonesHorario.Where(sh => sh.ocupacionRecomendada <= 1)
                     .OrderByDescending(sh => sh.ocupacionRecomendada)
                     .ThenBy(sh => sh.salon)
-                    .ThenBy(sh => sh.hora)
-                    .Select(sh => new { sh.salon, sh.hora})
-                    .FirstOrDefault() ?? new {salon = 0, hora = horaActual};
+                    .ThenBy(sh => sh.hora).ToList();
+
+                salonHorario = salonesHorarioTemp
+                    .Select(sh => new { sh.salon, sh.hora })
+                    .FirstOrDefault() ?? new { salon = 0, hora = horaActual };
 
                 if (salonHorario.salon <= 0)
-                    salonHorario = salonesHorario.Where(sh => sh.ocupacionMaxima <= 1)
+                {
+                    salonesHorarioTemp = salonesHorario.Where(sh => sh.ocupacionMaxima <= 1)
                         .OrderByDescending(sh => sh.ocupacionMaxima)
                         .ThenBy(sh => sh.salon)
-                        .ThenBy(sh => sh.hora)
-                        .Select(sh => new { sh.salon, sh.hora})
-                        .FirstOrDefault() ?? new {salon = 0, hora = horaActual};
+                        .ThenBy(sh => sh.hora).ToList();
+
+                    salonHorario = salonesHorarioTemp
+                        .Select(sh => new { sh.salon, sh.hora })
+                        .FirstOrDefault() ?? new { salon = 0, hora = horaActual };
+                }
 
                 if (salonHorario.salon <= 0 && param.IgnoreMaxCapacity)
-                    salonHorario = salonesHorario.OrderBy(sh => sh.salon).ThenBy(sh => sh.hora)
-                        .Select(sh => new { sh.salon, sh.hora})
-                        .FirstOrDefault() ?? new {salon = 0, hora = horaActual};
+                {
+                    salonesHorarioTemp = salonesHorario.OrderBy(sh => sh.salon).ThenBy(sh => sh.hora).ToList();
+
+                    salonHorario = salonesHorarioTemp
+                        .Select(sh => new { sh.salon, sh.hora })
+                        .FirstOrDefault() ?? new { salon = 0, hora = horaActual };
+                }
             }
             else if (param.CareerPriority)
             {
-                var salonesHorarioTemp = salonesHorario.Where(sh => sh.ocupacionRecomendada <= 1).ToList();
+                salonesHorarioTemp = salonesHorario.Where(sh => sh.ocupacionRecomendada <= 1).ToList();
 
                 var filtro =
                     salonesHorarioTemp.Any(sh => sh.carreraPreferida > 0 && sh.carreraPreferida == c.CodigoCarrera);
@@ -167,8 +173,8 @@ public class CoreService
                     ;
 
                 salonHorario = salonesHorarioTemp.OrderBy(sh => sh.salon).ThenBy(sh => sh.hora)
-                    .Select(sh => new { sh.salon, sh.hora})
-                    .FirstOrDefault() ?? new {salon = 0, hora = horaActual};
+                    .Select(sh => new { sh.salon, sh.hora })
+                    .FirstOrDefault() ?? new { salon = 0, hora = horaActual };
 
                 if (salonHorario.salon <= 0)
                 {
@@ -181,8 +187,8 @@ public class CoreService
                         ;
 
                     salonHorario = salonesHorarioTemp.OrderBy(sh => sh.salon).ThenBy(sh => sh.hora)
-                        .Select(sh => new { sh.salon, sh.hora})
-                        .FirstOrDefault() ?? new {salon = 0, hora = horaActual};
+                        .Select(sh => new { sh.salon, sh.hora })
+                        .FirstOrDefault() ?? new { salon = 0, hora = horaActual };
                 }
 
                 if (salonHorario.salon <= 0 && param.IgnoreMaxCapacity)
@@ -194,29 +200,39 @@ public class CoreService
                             : salonesHorarioTemp
                         ;
                     salonHorario = salonesHorarioTemp.OrderBy(sh => sh.salon).ThenBy(sh => sh.hora)
-                        .Select(sh => new { sh.salon, sh.hora})
-                        .FirstOrDefault() ?? new {salon = 0, hora = horaActual};
+                        .Select(sh => new { sh.salon, sh.hora })
+                        .FirstOrDefault() ?? new { salon = 0, hora = horaActual };
                 }
             }
             else
             {
-                salonHorario = salonesHorario.Where(sh => sh.ocupacionRecomendada <= 1)
+                salonesHorarioTemp = salonesHorario.Where(sh => sh.ocupacionRecomendada <= 1)
                     .OrderBy(sh => sh.salon)
-                    .ThenBy(sh => sh.hora)
-                    .Select(sh => new { sh.salon, sh.hora})
-                    .FirstOrDefault() ?? new {salon = 0, hora = horaActual};
+                    .ThenBy(sh => sh.hora).ToList();
+
+                salonHorario = salonesHorarioTemp
+                    .Select(sh => new { sh.salon, sh.hora })
+                    .FirstOrDefault() ?? new { salon = 0, hora = horaActual };
 
                 if (salonHorario.salon <= 0)
-                    salonHorario = salonesHorario.Where(sh => sh.ocupacionMaxima <= 1)
+                {
+                    salonesHorarioTemp = salonesHorario.Where(sh => sh.ocupacionMaxima <= 1)
                         .OrderBy(sh => sh.salon)
-                        .ThenBy(sh => sh.hora)
-                        .Select(sh => new { sh.salon, sh.hora})
-                        .FirstOrDefault() ?? new {salon = 0, hora = horaActual};
+                        .ThenBy(sh => sh.hora).ToList();
+
+                    salonHorario = salonesHorarioTemp
+                        .Select(sh => new { sh.salon, sh.hora })
+                        .FirstOrDefault() ?? new { salon = 0, hora = horaActual };
+                }
 
                 if (salonHorario.salon <= 0 && param.IgnoreMaxCapacity)
-                    salonHorario = salonesHorario.OrderBy(sh => sh.salon).ThenBy(sh => sh.hora)
-                        .Select(sh => new { sh.salon, sh.hora})
-                        .FirstOrDefault() ?? new {salon = 0, hora = horaActual};
+                {
+                    salonesHorarioTemp = salonesHorario;
+
+                    salonHorario = salonesHorarioTemp.OrderBy(sh => sh.salon).ThenBy(sh => sh.hora)
+                        .Select(sh => new { sh.salon, sh.hora })
+                        .FirstOrDefault() ?? new { salon = 0, hora = horaActual };
+                }
             }
 
             if (salonHorario.salon == 0)
@@ -231,6 +247,52 @@ public class CoreService
                 continue;
             }
 
+            salonesHorarioTemp.RemoveAt(0);
+
+            var catedraticoHorario = 0;
+            if (param.TeacherPriority)
+                catedraticosCursos = catedraticosCursos.OrderByDescending(cat => cat.Prioridad).ToList();
+
+            var salonHorarioTemp = salonHorario;
+            foreach (var catedratico in catedraticosCursos)
+            {
+                if (catedratico.HoraEntrada > salonHorario.hora ||
+                    catedratico.HoraSalida < salonHorario.hora.AddMinutes(param.DurationPeriod) ||
+                    (assignedCourses.Any(ac =>
+                        ac.HoraInicio == salonHorario.hora &&
+                        ac.Catedratico.CodigoCatedratico == catedratico.CodigoCatedratico)))
+                {
+                    foreach (var salonH in salonesHorarioTemp)
+                    {
+                        salonHorarioTemp = new { salon = salonH.salon, hora = salonH.hora };
+                        if (catedratico.HoraEntrada > salonH.hora ||
+                            catedratico.HoraSalida < salonH.hora.AddMinutes(param.DurationPeriod) ||
+                            assignedCourses.Any(ac =>
+                                ac.HoraInicio == salonH.hora &&
+                                ac.Catedratico.CodigoCatedratico == catedratico.CodigoCatedratico)) continue;
+                        catedraticoHorario = catedratico.CodigoCatedratico;
+                        break;
+                    }
+
+                    if (catedraticoHorario > 0) break;
+                    continue;
+                }
+
+                catedraticoHorario = catedratico.CodigoCatedratico;
+            }
+
+            if (catedraticoHorario == 0)
+            {
+                notAssignedCourses.Add(new CursoConAdvertencia()
+                {
+                    CodigoCurso = c.CodigoCurso,
+                    Nombre = cursos.Where(c2 => c2.CodigoCurso == c.CodigoCurso).Select(c2 => c2.Nombre)
+                        .FirstOrDefault()!,
+                    Advertencia = $"No existe catedratico disponible en el horario {salonHorario.hora}"
+                });
+                continue;
+            }
+
             assignedCourses.Add(new CursoHorarioDTO()
             {
                 CodigoHorario = lastScheduleId + 1,
@@ -241,18 +303,28 @@ public class CoreService
                     Semestre = c.Semestre,
                     Carrera = carreras.Find(carrera => carrera.CodigoCarrera == c.CodigoCarrera)!
                 },
-                Salon = salones.Find(s => s.NoSalon == salonHorario.salon)!,
-                HoraInicio = salonHorario.hora,
-                HoraFin = salonHorario.hora.AddMinutes(param.DurationPeriod)
+                Catedratico = catedraticos.Find(cat => cat.CodigoCatedratico == catedraticoHorario)!,
+                Salon = salones.Find(s => s.NoSalon == salonHorarioTemp.salon)!,
+                HoraInicio = salonHorarioTemp.hora,
+                HoraFin = salonHorarioTemp.hora.AddMinutes(param.DurationPeriod)
             });
         }
-        
-        Console.WriteLine("Cursos asignados");
-        assignedCourses.ForEach(ac => Console.WriteLine(ac.ToString()));
-        
-        Console.WriteLine("Cursos no asignados");
-        notAssignedCourses.ForEach(ac => Console.WriteLine(ac.ToString()));
 
-        return horario;
+        var data = new ResponseData()
+        {
+            Horario = assignedCourses,
+            Advertencias = notAssignedCourses,
+            Carreras = carreras.Select(c => new CarreraColor()
+            {
+                CodigoCarrera = c.CodigoCarrera,
+                Nombre = c.Nombre,
+                Color = c.Color
+            }).ToList(),
+            HoraInicio = param.StartHour,
+            HoraFin = param.EndHour,
+            DuracionPeriodo = param.DurationPeriod
+        };
+        
+        return data;
     }
 }

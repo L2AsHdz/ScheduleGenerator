@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using ScheduleCore.Converters;
 using ScheduleCore.Models;
 using ScheduleCore.Services.Core;
 using ScheduleCore.Services.Parametro;
@@ -7,6 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add Controllers to the container.
 builder.Services.AddControllers();
+
+builder.Services.AddControllers().AddJsonOptions(options => 
+    options.JsonSerializerOptions.Converters.Add(new TimeOnlyConverter()));
 
 // Add CORS Policy
 builder.Services.AddCors(options =>

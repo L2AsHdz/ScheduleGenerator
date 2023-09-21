@@ -9,4 +9,5 @@ public class Carrera
     public string Nombre { get; set; }
     public int CantidadSemestres { get; set; }
     public decimal Presupuesto { get; set; }
+    public string Color { get; set; }
 }
