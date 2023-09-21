@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ScheduleService } from 'src/app/services/schedule.service';
+import Swal from 'sweetalert2';
 
 @Component({
     selector: 'app-scheduler',
@@ -11,11 +12,20 @@ export class SchedulerComponent {
 
     constructor(private scheduleService: ScheduleService, private route: Router) { }
 
-    generateSchedule() {
+    async generateSchedule() {
+        // Swal.fire({
+        //     title: 'Generando horario',
+        //     allowEscapeKey: false,
+        //     allowOutsideClick: false,
+        //     showConfirmButton: false,
+        // });
+        // Swal.showLoading();
+
 
         this.scheduleService.generateSchedule()
             .subscribe(data => {
-                this.scheduleService.setHorario(data as any[]);
+                // Swal.close();
+                localStorage.setItem('horario', JSON.stringify(data));
                 this.route.navigate(['/scheduler/view']);
             });
     }

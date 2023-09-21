@@ -1,665 +1,900 @@
 {
-    "horario": [
-      {
-        "idRegistro": 0,
-        "codigoHorario": 1,
-        "curso": {
-          "codigoCurso": 12,
-          "nombre": "Curso 12",
-          "semestre": 4,
-          "carrera": {
-            "codigoCarrera": 1,
-            "nombre": "Carrera 1",
-            "cantidadSemestres": 4,
-            "presupuesto": 100000
-          }
-        },
-        "catedratico": {
-          "codigoCatedratico": 4,
-          "nombre": "Catedratico 4",
-          "noColegiado": 12345,
-          "horaEntrada": "15:00:00",
-          "horaSalida": "19:00:00"
-        },
-        "salon": {
-          "noSalon": 1,
-          "nombre": "Salon 1",
-          "capacidadMaxima": 35,
-          "capacidadRecomendada": 25,
-          "codigoCarreraPreferida": null,
-          "ubicacion": "Ubicacion 1"
-        },
-        "horaInicio": "15:00:00",
-        "horaFin": "16:00:00",
-        "estado": 0
+  "horario": [
+    {
+      "idRegistro": 0,
+      "codigoHorario": 1,
+      "curso": {
+        "codigoCurso": 12,
+        "nombre": "Curso 12",
+        "semestre": 4,
+        "carrera": {
+          "codigoCarrera": 1,
+          "nombre": "Carrera 1",
+          "cantidadSemestres": 4,
+          "presupuesto": 100000,
+          "color": "#D4B27D"
+        }
       },
-      {
-        "idRegistro": 0,
-        "codigoHorario": 1,
-        "curso": {
-          "codigoCurso": 13,
-          "nombre": "Curso 13",
-          "semestre": 4,
-          "carrera": {
-            "codigoCarrera": 1,
-            "nombre": "Carrera 1",
-            "cantidadSemestres": 4,
-            "presupuesto": 100000
-          }
-        },
-        "catedratico": {
-          "codigoCatedratico": 13,
-          "nombre": "Catedratico 13",
-          "noColegiado": 12345,
-          "horaEntrada": "18:00:00",
-          "horaSalida": "21:00:00"
-        },
-        "salon": {
-          "noSalon": 1,
-          "nombre": "Salon 1",
-          "capacidadMaxima": 35,
-          "capacidadRecomendada": 25,
-          "codigoCarreraPreferida": null,
-          "ubicacion": "Ubicacion 1"
-        },
-        "horaInicio": "18:00:00",
-        "horaFin": "19:00:00",
-        "estado": 0
+      "catedratico": {
+        "codigoCatedratico": 4,
+        "nombre": "Catedratico 4",
+        "noColegiado": 12345,
+        "horaEntrada": "15:00:00",
+        "horaSalida": "19:00:00"
       },
-      {
-        "idRegistro": 0,
-        "codigoHorario": 1,
-        "curso": {
-          "codigoCurso": 14,
-          "nombre": "Curso 14",
-          "semestre": 4,
-          "carrera": {
-            "codigoCarrera": 1,
-            "nombre": "Carrera 1",
-            "cantidadSemestres": 4,
-            "presupuesto": 100000
-          }
-        },
-        "catedratico": {
-          "codigoCatedratico": 2,
-          "nombre": "Catedratico 2",
-          "noColegiado": 12345,
-          "horaEntrada": "13:00:00",
-          "horaSalida": "18:00:00"
-        },
-        "salon": {
-          "noSalon": 1,
-          "nombre": "Salon 1",
-          "capacidadMaxima": 35,
-          "capacidadRecomendada": 25,
-          "codigoCarreraPreferida": null,
-          "ubicacion": "Ubicacion 1"
-        },
-        "horaInicio": "13:00:00",
-        "horaFin": "14:00:00",
-        "estado": 0
+      "salon": {
+        "noSalon": 1,
+        "nombre": "Salon 1",
+        "capacidadMaxima": 35,
+        "capacidadRecomendada": 25,
+        "codigoCarreraPreferida": null,
+        "ubicacion": "Ubicacion 1"
       },
-      {
-        "idRegistro": 0,
-        "codigoHorario": 1,
-        "curso": {
-          "codigoCurso": 24,
-          "nombre": "Curso 24",
-          "semestre": 4,
-          "carrera": {
-            "codigoCarrera": 2,
-            "nombre": "Carrera 2",
-            "cantidadSemestres": 4,
-            "presupuesto": 120000
-          }
-        },
-        "catedratico": {
-          "codigoCatedratico": 14,
-          "nombre": "Catedratico 14",
-          "noColegiado": 12345,
-          "horaEntrada": "13:00:00",
-          "horaSalida": "18:00:00"
-        },
-        "salon": {
-          "noSalon": 4,
-          "nombre": "Salon 4",
-          "capacidadMaxima": 40,
-          "capacidadRecomendada": 30,
-          "codigoCarreraPreferida": null,
-          "ubicacion": "Ubicacion 4"
-        },
-        "horaInicio": "13:00:00",
-        "horaFin": "14:00:00",
-        "estado": 0
+      "horaInicio": "15:00:00",
+      "horaFin": "16:00:00"
+    },
+    {
+      "idRegistro": 0,
+      "codigoHorario": 1,
+      "curso": {
+        "codigoCurso": 13,
+        "nombre": "Curso 13",
+        "semestre": 4,
+        "carrera": {
+          "codigoCarrera": 1,
+          "nombre": "Carrera 1",
+          "cantidadSemestres": 4,
+          "presupuesto": 100000,
+          "color": "#D4B27D"
+        }
       },
-      {
-        "idRegistro": 0,
-        "codigoHorario": 1,
-        "curso": {
-          "codigoCurso": 26,
-          "nombre": "Curso 26",
-          "semestre": 4,
-          "carrera": {
-            "codigoCarrera": 2,
-            "nombre": "Carrera 2",
-            "cantidadSemestres": 4,
-            "presupuesto": 120000
-          }
-        },
-        "catedratico": {
-          "codigoCatedratico": 16,
-          "nombre": "Catedratico 16",
-          "noColegiado": 12345,
-          "horaEntrada": "18:00:00",
-          "horaSalida": "21:00:00"
-        },
-        "salon": {
-          "noSalon": 7,
-          "nombre": "Salon 7",
-          "capacidadMaxima": 30,
-          "capacidadRecomendada": 20,
-          "codigoCarreraPreferida": 2,
-          "ubicacion": "Ubicacion 7"
-        },
-        "horaInicio": "18:00:00",
-        "horaFin": "19:00:00",
-        "estado": 0
+      "catedratico": {
+        "codigoCatedratico": 13,
+        "nombre": "Catedratico 13",
+        "noColegiado": 12345,
+        "horaEntrada": "18:00:00",
+        "horaSalida": "21:00:00"
       },
-      {
-        "idRegistro": 0,
-        "codigoHorario": 1,
-        "curso": {
-          "codigoCurso": 27,
-          "nombre": "Curso 27",
-          "semestre": 4,
-          "carrera": {
-            "codigoCarrera": 2,
-            "nombre": "Carrera 2",
-            "cantidadSemestres": 4,
-            "presupuesto": 120000
-          }
-        },
-        "catedratico": {
-          "codigoCatedratico": 17,
-          "nombre": "Catedratico 17",
-          "noColegiado": 12345,
-          "horaEntrada": "15:00:00",
-          "horaSalida": "19:00:00"
-        },
-        "salon": {
-          "noSalon": 1,
-          "nombre": "Salon 1",
-          "capacidadMaxima": 35,
-          "capacidadRecomendada": 25,
-          "codigoCarreraPreferida": null,
-          "ubicacion": "Ubicacion 1"
-        },
-        "horaInicio": "16:00:00",
-        "horaFin": "17:00:00",
-        "estado": 0
+      "salon": {
+        "noSalon": 1,
+        "nombre": "Salon 1",
+        "capacidadMaxima": 35,
+        "capacidadRecomendada": 25,
+        "codigoCarreraPreferida": null,
+        "ubicacion": "Ubicacion 1"
       },
-      {
-        "idRegistro": 0,
-        "codigoHorario": 1,
-        "curso": {
-          "codigoCurso": 36,
-          "nombre": "Curso 36",
-          "semestre": 4,
-          "carrera": {
-            "codigoCarrera": 3,
-            "nombre": "Carrera 3",
-            "cantidadSemestres": 4,
-            "presupuesto": 160000
-          }
-        },
-        "catedratico": {
-          "codigoCatedratico": 12,
-          "nombre": "Catedratico 12",
-          "noColegiado": 12345,
-          "horaEntrada": "15:00:00",
-          "horaSalida": "19:00:00"
-        },
-        "salon": {
-          "noSalon": 1,
-          "nombre": "Salon 1",
-          "capacidadMaxima": 35,
-          "capacidadRecomendada": 25,
-          "codigoCarreraPreferida": null,
-          "ubicacion": "Ubicacion 1"
-        },
-        "horaInicio": "17:00:00",
-        "horaFin": "18:00:00",
-        "estado": 0
+      "horaInicio": "18:00:00",
+      "horaFin": "19:00:00"
+    },
+    {
+      "idRegistro": 0,
+      "codigoHorario": 1,
+      "curso": {
+        "codigoCurso": 14,
+        "nombre": "Curso 14",
+        "semestre": 4,
+        "carrera": {
+          "codigoCarrera": 1,
+          "nombre": "Carrera 1",
+          "cantidadSemestres": 4,
+          "presupuesto": 100000,
+          "color": "#D4B27D"
+        }
       },
-      {
-        "idRegistro": 0,
-        "codigoHorario": 1,
-        "curso": {
-          "codigoCurso": 37,
-          "nombre": "Curso 37",
-          "semestre": 4,
-          "carrera": {
-            "codigoCarrera": 3,
-            "nombre": "Carrera 3",
-            "cantidadSemestres": 4,
-            "presupuesto": 160000
-          }
-        },
-        "catedratico": {
-          "codigoCatedratico": 13,
-          "nombre": "Catedratico 13",
-          "noColegiado": 12345,
-          "horaEntrada": "18:00:00",
-          "horaSalida": "21:00:00"
-        },
-        "salon": {
-          "noSalon": 5,
-          "nombre": "Salon 5",
-          "capacidadMaxima": 50,
-          "capacidadRecomendada": 40,
-          "codigoCarreraPreferida": null,
-          "ubicacion": "Ubicacion 5"
-        },
-        "horaInicio": "19:00:00",
-        "horaFin": "20:00:00",
-        "estado": 0
+      "catedratico": {
+        "codigoCatedratico": 2,
+        "nombre": "Catedratico 2",
+        "noColegiado": 12345,
+        "horaEntrada": "13:00:00",
+        "horaSalida": "18:00:00"
       },
-      {
-        "idRegistro": 0,
-        "codigoHorario": 1,
-        "curso": {
-          "codigoCurso": 38,
-          "nombre": "Curso 38",
-          "semestre": 4,
-          "carrera": {
-            "codigoCarrera": 3,
-            "nombre": "Carrera 3",
-            "cantidadSemestres": 4,
-            "presupuesto": 160000
-          }
-        },
-        "catedratico": {
-          "codigoCatedratico": 7,
-          "nombre": "Catedratico 7",
-          "noColegiado": 12345,
-          "horaEntrada": "14:00:00",
-          "horaSalida": "19:00:00"
-        },
-        "salon": {
-          "noSalon": 4,
-          "nombre": "Salon 4",
-          "capacidadMaxima": 40,
-          "capacidadRecomendada": 30,
-          "codigoCarreraPreferida": null,
-          "ubicacion": "Ubicacion 4"
-        },
-        "horaInicio": "14:00:00",
-        "horaFin": "15:00:00",
-        "estado": 0
+      "salon": {
+        "noSalon": 2,
+        "nombre": "Salon 2",
+        "capacidadMaxima": 30,
+        "capacidadRecomendada": 20,
+        "codigoCarreraPreferida": null,
+        "ubicacion": "Ubicacion 2"
       },
-      {
-        "idRegistro": 0,
-        "codigoHorario": 1,
-        "curso": {
-          "codigoCurso": 39,
-          "nombre": "Curso 39",
-          "semestre": 4,
-          "carrera": {
-            "codigoCarrera": 3,
-            "nombre": "Carrera 3",
-            "cantidadSemestres": 4,
-            "presupuesto": 160000
-          }
-        },
-        "catedratico": {
-          "codigoCatedratico": 4,
-          "nombre": "Catedratico 4",
-          "noColegiado": 12345,
-          "horaEntrada": "15:00:00",
-          "horaSalida": "19:00:00"
-        },
-        "salon": {
-          "noSalon": 4,
-          "nombre": "Salon 4",
-          "capacidadMaxima": 40,
-          "capacidadRecomendada": 30,
-          "codigoCarreraPreferida": null,
-          "ubicacion": "Ubicacion 4"
-        },
-        "horaInicio": "16:00:00",
-        "horaFin": "17:00:00",
-        "estado": 0
+      "horaInicio": "13:00:00",
+      "horaFin": "14:00:00"
+    },
+    {
+      "idRegistro": 0,
+      "codigoHorario": 1,
+      "curso": {
+        "codigoCurso": 15,
+        "nombre": "Curso 15",
+        "semestre": 4,
+        "carrera": {
+          "codigoCarrera": 1,
+          "nombre": "Carrera 1",
+          "cantidadSemestres": 4,
+          "presupuesto": 100000,
+          "color": "#D4B27D"
+        }
       },
-      {
-        "idRegistro": 0,
-        "codigoHorario": 1,
-        "curso": {
-          "codigoCurso": 40,
-          "nombre": "Curso 40",
-          "semestre": 4,
-          "carrera": {
-            "codigoCarrera": 3,
-            "nombre": "Carrera 3",
-            "cantidadSemestres": 4,
-            "presupuesto": 160000
-          }
-        },
-        "catedratico": {
-          "codigoCatedratico": 9,
-          "nombre": "Catedratico 9",
-          "noColegiado": 12345,
-          "horaEntrada": "14:00:00",
-          "horaSalida": "19:00:00"
-        },
-        "salon": {
-          "noSalon": 5,
-          "nombre": "Salon 5",
-          "capacidadMaxima": 50,
-          "capacidadRecomendada": 40,
-          "codigoCarreraPreferida": null,
-          "ubicacion": "Ubicacion 5"
-        },
-        "horaInicio": "15:00:00",
-        "horaFin": "16:00:00",
-        "estado": 0
+      "catedratico": {
+        "codigoCatedratico": 1,
+        "nombre": "Catedratico 1",
+        "noColegiado": 12345,
+        "horaEntrada": "13:00:00",
+        "horaSalida": "18:00:00"
       },
-      {
-        "idRegistro": 0,
-        "codigoHorario": 1,
-        "curso": {
-          "codigoCurso": 5,
-          "nombre": "Curso 5",
-          "semestre": 2,
-          "carrera": {
-            "codigoCarrera": 1,
-            "nombre": "Carrera 1",
-            "cantidadSemestres": 4,
-            "presupuesto": 100000
-          }
-        },
-        "catedratico": {
-          "codigoCatedratico": 4,
-          "nombre": "Catedratico 4",
-          "noColegiado": 12345,
-          "horaEntrada": "15:00:00",
-          "horaSalida": "19:00:00"
-        },
-        "salon": {
-          "noSalon": 3,
-          "nombre": "Salon 3",
-          "capacidadMaxima": 20,
-          "capacidadRecomendada": 15,
-          "codigoCarreraPreferida": 1,
-          "ubicacion": "Ubicacion 3"
-        },
-        "horaInicio": "17:00:00",
-        "horaFin": "18:00:00",
-        "estado": 0
+      "salon": {
+        "noSalon": 1,
+        "nombre": "Salon 1",
+        "capacidadMaxima": 35,
+        "capacidadRecomendada": 25,
+        "codigoCarreraPreferida": null,
+        "ubicacion": "Ubicacion 1"
       },
-      {
-        "idRegistro": 0,
-        "codigoHorario": 1,
-        "curso": {
-          "codigoCurso": 6,
-          "nombre": "Curso 6",
-          "semestre": 2,
-          "carrera": {
-            "codigoCarrera": 1,
-            "nombre": "Carrera 1",
-            "cantidadSemestres": 4,
-            "presupuesto": 100000
-          }
-        },
-        "catedratico": {
-          "codigoCatedratico": 5,
-          "nombre": "Catedratico 5",
-          "noColegiado": 12345,
-          "horaEntrada": "18:00:00",
-          "horaSalida": "21:00:00"
-        },
-        "salon": {
-          "noSalon": 1,
-          "nombre": "Salon 1",
-          "capacidadMaxima": 35,
-          "capacidadRecomendada": 25,
-          "codigoCarreraPreferida": null,
-          "ubicacion": "Ubicacion 1"
-        },
-        "horaInicio": "19:00:00",
-        "horaFin": "20:00:00",
-        "estado": 0
+      "horaInicio": "14:00:00",
+      "horaFin": "15:00:00"
+    },
+    {
+      "idRegistro": 0,
+      "codigoHorario": 1,
+      "curso": {
+        "codigoCurso": 24,
+        "nombre": "Curso 24",
+        "semestre": 4,
+        "carrera": {
+          "codigoCarrera": 2,
+          "nombre": "Carrera 2",
+          "cantidadSemestres": 4,
+          "presupuesto": 120000,
+          "color": "#BBBAE8"
+        }
       },
-      {
-        "idRegistro": 0,
-        "codigoHorario": 1,
-        "curso": {
-          "codigoCurso": 7,
-          "nombre": "Curso 7",
-          "semestre": 2,
-          "carrera": {
-            "codigoCarrera": 1,
-            "nombre": "Carrera 1",
-            "cantidadSemestres": 4,
-            "presupuesto": 100000
-          }
-        },
-        "catedratico": {
-          "codigoCatedratico": 6,
-          "nombre": "Catedratico 6",
-          "noColegiado": 12345,
-          "horaEntrada": "15:00:00",
-          "horaSalida": "19:00:00"
-        },
-        "salon": {
-          "noSalon": 2,
-          "nombre": "Salon 2",
-          "capacidadMaxima": 30,
-          "capacidadRecomendada": 20,
-          "codigoCarreraPreferida": null,
-          "ubicacion": "Ubicacion 2"
-        },
-        "horaInicio": "15:00:00",
-        "horaFin": "16:00:00",
-        "estado": 0
+      "catedratico": {
+        "codigoCatedratico": 14,
+        "nombre": "Catedratico 14",
+        "noColegiado": 12345,
+        "horaEntrada": "13:00:00",
+        "horaSalida": "18:00:00"
       },
-      {
-        "idRegistro": 0,
-        "codigoHorario": 1,
-        "curso": {
-          "codigoCurso": 18,
-          "nombre": "Curso 18",
-          "semestre": 2,
-          "carrera": {
-            "codigoCarrera": 2,
-            "nombre": "Carrera 2",
-            "cantidadSemestres": 4,
-            "presupuesto": 120000
-          }
-        },
-        "catedratico": {
-          "codigoCatedratico": 11,
-          "nombre": "Catedratico 11",
-          "noColegiado": 12345,
-          "horaEntrada": "18:00:00",
-          "horaSalida": "21:00:00"
-        },
-        "salon": {
-          "noSalon": 7,
-          "nombre": "Salon 7",
-          "capacidadMaxima": 30,
-          "capacidadRecomendada": 20,
-          "codigoCarreraPreferida": 2,
-          "ubicacion": "Ubicacion 7"
-        },
-        "horaInicio": "19:00:00",
-        "horaFin": "20:00:00",
-        "estado": 0
+      "salon": {
+        "noSalon": 4,
+        "nombre": "Salon 4",
+        "capacidadMaxima": 40,
+        "capacidadRecomendada": 30,
+        "codigoCarreraPreferida": null,
+        "ubicacion": "Ubicacion 4"
       },
-      {
-        "idRegistro": 0,
-        "codigoHorario": 1,
-        "curso": {
-          "codigoCurso": 19,
-          "nombre": "Curso 19",
-          "semestre": 2,
-          "carrera": {
-            "codigoCarrera": 2,
-            "nombre": "Carrera 2",
-            "cantidadSemestres": 4,
-            "presupuesto": 120000
-          }
-        },
-        "catedratico": {
-          "codigoCatedratico": 9,
-          "nombre": "Catedratico 9",
-          "noColegiado": 12345,
-          "horaEntrada": "14:00:00",
-          "horaSalida": "19:00:00"
-        },
-        "salon": {
-          "noSalon": 1,
-          "nombre": "Salon 1",
-          "capacidadMaxima": 35,
-          "capacidadRecomendada": 25,
-          "codigoCarreraPreferida": null,
-          "ubicacion": "Ubicacion 1"
-        },
-        "horaInicio": "14:00:00",
-        "horaFin": "15:00:00",
-        "estado": 0
+      "horaInicio": "13:00:00",
+      "horaFin": "14:00:00"
+    },
+    {
+      "idRegistro": 0,
+      "codigoHorario": 1,
+      "curso": {
+        "codigoCurso": 25,
+        "nombre": "Curso 25",
+        "semestre": 4,
+        "carrera": {
+          "codigoCarrera": 2,
+          "nombre": "Carrera 2",
+          "cantidadSemestres": 4,
+          "presupuesto": 120000,
+          "color": "#BBBAE8"
+        }
       },
-      {
-        "idRegistro": 0,
-        "codigoHorario": 1,
-        "curso": {
-          "codigoCurso": 29,
-          "nombre": "Curso 29",
-          "semestre": 2,
-          "carrera": {
-            "codigoCarrera": 3,
-            "nombre": "Carrera 3",
-            "cantidadSemestres": 4,
-            "presupuesto": 160000
-          }
-        },
-        "catedratico": {
-          "codigoCatedratico": 19,
-          "nombre": "Catedratico 19",
-          "noColegiado": 12345,
-          "horaEntrada": "15:00:00",
-          "horaSalida": "19:00:00"
-        },
-        "salon": {
-          "noSalon": 2,
-          "nombre": "Salon 2",
-          "capacidadMaxima": 30,
-          "capacidadRecomendada": 20,
-          "codigoCarreraPreferida": null,
-          "ubicacion": "Ubicacion 2"
-        },
-        "horaInicio": "16:00:00",
-        "horaFin": "17:00:00",
-        "estado": 0
+      "catedratico": {
+        "codigoCatedratico": 15,
+        "nombre": "Catedratico 15",
+        "noColegiado": 12345,
+        "horaEntrada": "16:00:00",
+        "horaSalida": "20:00:00"
       },
-      {
-        "idRegistro": 0,
-        "codigoHorario": 1,
-        "curso": {
-          "codigoCurso": 30,
-          "nombre": "Curso 30",
-          "semestre": 2,
-          "carrera": {
-            "codigoCarrera": 3,
-            "nombre": "Carrera 3",
-            "cantidadSemestres": 4,
-            "presupuesto": 160000
-          }
-        },
-        "catedratico": {
-          "codigoCatedratico": 20,
-          "nombre": "Catedratico 20",
-          "noColegiado": 12345,
-          "horaEntrada": "18:00:00",
-          "horaSalida": "21:00:00"
-        },
-        "salon": {
-          "noSalon": 1,
-          "nombre": "Salon 1",
-          "capacidadMaxima": 35,
-          "capacidadRecomendada": 25,
-          "codigoCarreraPreferida": null,
-          "ubicacion": "Ubicacion 1"
-        },
-        "horaInicio": "20:00:00",
-        "horaFin": "21:00:00",
-        "estado": 0
+      "salon": {
+        "noSalon": 3,
+        "nombre": "Salon 3",
+        "capacidadMaxima": 20,
+        "capacidadRecomendada": 15,
+        "codigoCarreraPreferida": 1,
+        "ubicacion": "Ubicacion 3"
       },
-      {
-        "idRegistro": 0,
-        "codigoHorario": 1,
-        "curso": {
-          "codigoCurso": 31,
-          "nombre": "Curso 31",
-          "semestre": 2,
-          "carrera": {
-            "codigoCarrera": 3,
-            "nombre": "Carrera 3",
-            "cantidadSemestres": 4,
-            "presupuesto": 160000
-          }
-        },
-        "catedratico": {
-          "codigoCatedratico": 15,
-          "nombre": "Catedratico 15",
-          "noColegiado": 12345,
-          "horaEntrada": "16:00:00",
-          "horaSalida": "20:00:00"
-        },
-        "salon": {
-          "noSalon": 4,
-          "nombre": "Salon 4",
-          "capacidadMaxima": 40,
-          "capacidadRecomendada": 30,
-          "codigoCarreraPreferida": null,
-          "ubicacion": "Ubicacion 4"
-        },
-        "horaInicio": "17:00:00",
-        "horaFin": "18:00:00",
-        "estado": 0
+      "horaInicio": "16:00:00",
+      "horaFin": "17:00:00"
+    },
+    {
+      "idRegistro": 0,
+      "codigoHorario": 1,
+      "curso": {
+        "codigoCurso": 26,
+        "nombre": "Curso 26",
+        "semestre": 4,
+        "carrera": {
+          "codigoCarrera": 2,
+          "nombre": "Carrera 2",
+          "cantidadSemestres": 4,
+          "presupuesto": 120000,
+          "color": "#BBBAE8"
+        }
       },
-      {
-        "idRegistro": 0,
-        "codigoHorario": 1,
-        "curso": {
-          "codigoCurso": 32,
-          "nombre": "Curso 32",
-          "semestre": 2,
-          "carrera": {
-            "codigoCarrera": 3,
-            "nombre": "Carrera 3",
-            "cantidadSemestres": 4,
-            "presupuesto": 160000
-          }
-        },
-        "catedratico": {
-          "codigoCatedratico": 14,
-          "nombre": "Catedratico 14",
-          "noColegiado": 12345,
-          "horaEntrada": "13:00:00",
-          "horaSalida": "18:00:00"
-        },
-        "salon": {
-          "noSalon": 2,
-          "nombre": "Salon 2",
-          "capacidadMaxima": 30,
-          "capacidadRecomendada": 20,
-          "codigoCarreraPreferida": null,
-          "ubicacion": "Ubicacion 2"
-        },
-        "horaInicio": "14:00:00",
-        "horaFin": "15:00:00",
-        "estado": 0
-      }
-    ],
-    "advertencias": []
-  }
+      "catedratico": {
+        "codigoCatedratico": 16,
+        "nombre": "Catedratico 16",
+        "noColegiado": 12345,
+        "horaEntrada": "18:00:00",
+        "horaSalida": "21:00:00"
+      },
+      "salon": {
+        "noSalon": 2,
+        "nombre": "Salon 2",
+        "capacidadMaxima": 30,
+        "capacidadRecomendada": 20,
+        "codigoCarreraPreferida": null,
+        "ubicacion": "Ubicacion 2"
+      },
+      "horaInicio": "18:00:00",
+      "horaFin": "19:00:00"
+    },
+    {
+      "idRegistro": 0,
+      "codigoHorario": 1,
+      "curso": {
+        "codigoCurso": 27,
+        "nombre": "Curso 27",
+        "semestre": 4,
+        "carrera": {
+          "codigoCarrera": 2,
+          "nombre": "Carrera 2",
+          "cantidadSemestres": 4,
+          "presupuesto": 120000,
+          "color": "#BBBAE8"
+        }
+      },
+      "catedratico": {
+        "codigoCatedratico": 17,
+        "nombre": "Catedratico 17",
+        "noColegiado": 12345,
+        "horaEntrada": "15:00:00",
+        "horaSalida": "19:00:00"
+      },
+      "salon": {
+        "noSalon": 1,
+        "nombre": "Salon 1",
+        "capacidadMaxima": 35,
+        "capacidadRecomendada": 25,
+        "codigoCarreraPreferida": null,
+        "ubicacion": "Ubicacion 1"
+      },
+      "horaInicio": "17:00:00",
+      "horaFin": "18:00:00"
+    },
+    {
+      "idRegistro": 0,
+      "codigoHorario": 1,
+      "curso": {
+        "codigoCurso": 36,
+        "nombre": "Curso 36",
+        "semestre": 4,
+        "carrera": {
+          "codigoCarrera": 3,
+          "nombre": "Carrera 3",
+          "cantidadSemestres": 4,
+          "presupuesto": 160000,
+          "color": "#6ECF9E"
+        }
+      },
+      "catedratico": {
+        "codigoCatedratico": 12,
+        "nombre": "Catedratico 12",
+        "noColegiado": 12345,
+        "horaEntrada": "15:00:00",
+        "horaSalida": "19:00:00"
+      },
+      "salon": {
+        "noSalon": 1,
+        "nombre": "Salon 1",
+        "capacidadMaxima": 35,
+        "capacidadRecomendada": 25,
+        "codigoCarreraPreferida": null,
+        "ubicacion": "Ubicacion 1"
+      },
+      "horaInicio": "16:00:00",
+      "horaFin": "17:00:00"
+    },
+    {
+      "idRegistro": 0,
+      "codigoHorario": 1,
+      "curso": {
+        "codigoCurso": 37,
+        "nombre": "Curso 37",
+        "semestre": 4,
+        "carrera": {
+          "codigoCarrera": 3,
+          "nombre": "Carrera 3",
+          "cantidadSemestres": 4,
+          "presupuesto": 160000,
+          "color": "#6ECF9E"
+        }
+      },
+      "catedratico": {
+        "codigoCatedratico": 13,
+        "nombre": "Catedratico 13",
+        "noColegiado": 12345,
+        "horaEntrada": "18:00:00",
+        "horaSalida": "21:00:00"
+      },
+      "salon": {
+        "noSalon": 5,
+        "nombre": "Salon 5",
+        "capacidadMaxima": 50,
+        "capacidadRecomendada": 40,
+        "codigoCarreraPreferida": null,
+        "ubicacion": "Ubicacion 5"
+      },
+      "horaInicio": "19:00:00",
+      "horaFin": "20:00:00"
+    },
+    {
+      "idRegistro": 0,
+      "codigoHorario": 1,
+      "curso": {
+        "codigoCurso": 38,
+        "nombre": "Curso 38",
+        "semestre": 4,
+        "carrera": {
+          "codigoCarrera": 3,
+          "nombre": "Carrera 3",
+          "cantidadSemestres": 4,
+          "presupuesto": 160000,
+          "color": "#6ECF9E"
+        }
+      },
+      "catedratico": {
+        "codigoCatedratico": 7,
+        "nombre": "Catedratico 7",
+        "noColegiado": 12345,
+        "horaEntrada": "14:00:00",
+        "horaSalida": "19:00:00"
+      },
+      "salon": {
+        "noSalon": 4,
+        "nombre": "Salon 4",
+        "capacidadMaxima": 40,
+        "capacidadRecomendada": 30,
+        "codigoCarreraPreferida": null,
+        "ubicacion": "Ubicacion 4"
+      },
+      "horaInicio": "14:00:00",
+      "horaFin": "15:00:00"
+    },
+    {
+      "idRegistro": 0,
+      "codigoHorario": 1,
+      "curso": {
+        "codigoCurso": 39,
+        "nombre": "Curso 39",
+        "semestre": 4,
+        "carrera": {
+          "codigoCarrera": 3,
+          "nombre": "Carrera 3",
+          "cantidadSemestres": 4,
+          "presupuesto": 160000,
+          "color": "#6ECF9E"
+        }
+      },
+      "catedratico": {
+        "codigoCatedratico": 4,
+        "nombre": "Catedratico 4",
+        "noColegiado": 12345,
+        "horaEntrada": "15:00:00",
+        "horaSalida": "19:00:00"
+      },
+      "salon": {
+        "noSalon": 8,
+        "nombre": "Salon 8",
+        "capacidadMaxima": 35,
+        "capacidadRecomendada": 25,
+        "codigoCarreraPreferida": null,
+        "ubicacion": "Ubicacion 8"
+      },
+      "horaInicio": "17:00:00",
+      "horaFin": "18:00:00"
+    },
+    {
+      "idRegistro": 0,
+      "codigoHorario": 1,
+      "curso": {
+        "codigoCurso": 40,
+        "nombre": "Curso 40",
+        "semestre": 4,
+        "carrera": {
+          "codigoCarrera": 3,
+          "nombre": "Carrera 3",
+          "cantidadSemestres": 4,
+          "presupuesto": 160000,
+          "color": "#6ECF9E"
+        }
+      },
+      "catedratico": {
+        "codigoCatedratico": 9,
+        "nombre": "Catedratico 9",
+        "noColegiado": 12345,
+        "horaEntrada": "14:00:00",
+        "horaSalida": "19:00:00"
+      },
+      "salon": {
+        "noSalon": 5,
+        "nombre": "Salon 5",
+        "capacidadMaxima": 50,
+        "capacidadRecomendada": 40,
+        "codigoCarreraPreferida": null,
+        "ubicacion": "Ubicacion 5"
+      },
+      "horaInicio": "15:00:00",
+      "horaFin": "16:00:00"
+    },
+    {
+      "idRegistro": 0,
+      "codigoHorario": 1,
+      "curso": {
+        "codigoCurso": 5,
+        "nombre": "Curso 5",
+        "semestre": 2,
+        "carrera": {
+          "codigoCarrera": 1,
+          "nombre": "Carrera 1",
+          "cantidadSemestres": 4,
+          "presupuesto": 100000,
+          "color": "#D4B27D"
+        }
+      },
+      "catedratico": {
+        "codigoCatedratico": 4,
+        "nombre": "Catedratico 4",
+        "noColegiado": 12345,
+        "horaEntrada": "15:00:00",
+        "horaSalida": "19:00:00"
+      },
+      "salon": {
+        "noSalon": 3,
+        "nombre": "Salon 3",
+        "capacidadMaxima": 20,
+        "capacidadRecomendada": 15,
+        "codigoCarreraPreferida": 1,
+        "ubicacion": "Ubicacion 3"
+      },
+      "horaInicio": "18:00:00",
+      "horaFin": "19:00:00"
+    },
+    {
+      "idRegistro": 0,
+      "codigoHorario": 1,
+      "curso": {
+        "codigoCurso": 6,
+        "nombre": "Curso 6",
+        "semestre": 2,
+        "carrera": {
+          "codigoCarrera": 1,
+          "nombre": "Carrera 1",
+          "cantidadSemestres": 4,
+          "presupuesto": 100000,
+          "color": "#D4B27D"
+        }
+      },
+      "catedratico": {
+        "codigoCatedratico": 5,
+        "nombre": "Catedratico 5",
+        "noColegiado": 12345,
+        "horaEntrada": "18:00:00",
+        "horaSalida": "21:00:00"
+      },
+      "salon": {
+        "noSalon": 2,
+        "nombre": "Salon 2",
+        "capacidadMaxima": 30,
+        "capacidadRecomendada": 20,
+        "codigoCarreraPreferida": null,
+        "ubicacion": "Ubicacion 2"
+      },
+      "horaInicio": "19:00:00",
+      "horaFin": "20:00:00"
+    },
+    {
+      "idRegistro": 0,
+      "codigoHorario": 1,
+      "curso": {
+        "codigoCurso": 7,
+        "nombre": "Curso 7",
+        "semestre": 2,
+        "carrera": {
+          "codigoCarrera": 1,
+          "nombre": "Carrera 1",
+          "cantidadSemestres": 4,
+          "presupuesto": 100000,
+          "color": "#D4B27D"
+        }
+      },
+      "catedratico": {
+        "codigoCatedratico": 6,
+        "nombre": "Catedratico 6",
+        "noColegiado": 12345,
+        "horaEntrada": "15:00:00",
+        "horaSalida": "19:00:00"
+      },
+      "salon": {
+        "noSalon": 2,
+        "nombre": "Salon 2",
+        "capacidadMaxima": 30,
+        "capacidadRecomendada": 20,
+        "codigoCarreraPreferida": null,
+        "ubicacion": "Ubicacion 2"
+      },
+      "horaInicio": "15:00:00",
+      "horaFin": "16:00:00"
+    },
+    {
+      "idRegistro": 0,
+      "codigoHorario": 1,
+      "curso": {
+        "codigoCurso": 10,
+        "nombre": "Curso 10",
+        "semestre": 2,
+        "carrera": {
+          "codigoCarrera": 2,
+          "nombre": "Carrera 2",
+          "cantidadSemestres": 4,
+          "presupuesto": 120000,
+          "color": "#BBBAE8"
+        }
+      },
+      "catedratico": {
+        "codigoCatedratico": 9,
+        "nombre": "Catedratico 9",
+        "noColegiado": 12345,
+        "horaEntrada": "14:00:00",
+        "horaSalida": "19:00:00"
+      },
+      "salon": {
+        "noSalon": 3,
+        "nombre": "Salon 3",
+        "capacidadMaxima": 20,
+        "capacidadRecomendada": 15,
+        "codigoCarreraPreferida": 1,
+        "ubicacion": "Ubicacion 3"
+      },
+      "horaInicio": "14:00:00",
+      "horaFin": "15:00:00"
+    },
+    {
+      "idRegistro": 0,
+      "codigoHorario": 1,
+      "curso": {
+        "codigoCurso": 17,
+        "nombre": "Curso 17",
+        "semestre": 2,
+        "carrera": {
+          "codigoCarrera": 2,
+          "nombre": "Carrera 2",
+          "cantidadSemestres": 4,
+          "presupuesto": 120000,
+          "color": "#BBBAE8"
+        }
+      },
+      "catedratico": {
+        "codigoCatedratico": 7,
+        "nombre": "Catedratico 7",
+        "noColegiado": 12345,
+        "horaEntrada": "14:00:00",
+        "horaSalida": "19:00:00"
+      },
+      "salon": {
+        "noSalon": 3,
+        "nombre": "Salon 3",
+        "capacidadMaxima": 20,
+        "capacidadRecomendada": 15,
+        "codigoCarreraPreferida": 1,
+        "ubicacion": "Ubicacion 3"
+      },
+      "horaInicio": "15:00:00",
+      "horaFin": "16:00:00"
+    },
+    {
+      "idRegistro": 0,
+      "codigoHorario": 1,
+      "curso": {
+        "codigoCurso": 18,
+        "nombre": "Curso 18",
+        "semestre": 2,
+        "carrera": {
+          "codigoCarrera": 2,
+          "nombre": "Carrera 2",
+          "cantidadSemestres": 4,
+          "presupuesto": 120000,
+          "color": "#BBBAE8"
+        }
+      },
+      "catedratico": {
+        "codigoCatedratico": 11,
+        "nombre": "Catedratico 11",
+        "noColegiado": 12345,
+        "horaEntrada": "18:00:00",
+        "horaSalida": "21:00:00"
+      },
+      "salon": {
+        "noSalon": 2,
+        "nombre": "Salon 2",
+        "capacidadMaxima": 30,
+        "capacidadRecomendada": 20,
+        "codigoCarreraPreferida": null,
+        "ubicacion": "Ubicacion 2"
+      },
+      "horaInicio": "20:00:00",
+      "horaFin": "21:00:00"
+    },
+    {
+      "idRegistro": 0,
+      "codigoHorario": 1,
+      "curso": {
+        "codigoCurso": 19,
+        "nombre": "Curso 19",
+        "semestre": 2,
+        "carrera": {
+          "codigoCarrera": 2,
+          "nombre": "Carrera 2",
+          "cantidadSemestres": 4,
+          "presupuesto": 120000,
+          "color": "#BBBAE8"
+        }
+      },
+      "catedratico": {
+        "codigoCatedratico": 9,
+        "nombre": "Catedratico 9",
+        "noColegiado": 12345,
+        "horaEntrada": "14:00:00",
+        "horaSalida": "19:00:00"
+      },
+      "salon": {
+        "noSalon": 8,
+        "nombre": "Salon 8",
+        "capacidadMaxima": 35,
+        "capacidadRecomendada": 25,
+        "codigoCarreraPreferida": null,
+        "ubicacion": "Ubicacion 8"
+      },
+      "horaInicio": "16:00:00",
+      "horaFin": "17:00:00"
+    },
+    {
+      "idRegistro": 0,
+      "codigoHorario": 1,
+      "curso": {
+        "codigoCurso": 29,
+        "nombre": "Curso 29",
+        "semestre": 2,
+        "carrera": {
+          "codigoCarrera": 3,
+          "nombre": "Carrera 3",
+          "cantidadSemestres": 4,
+          "presupuesto": 160000,
+          "color": "#6ECF9E"
+        }
+      },
+      "catedratico": {
+        "codigoCatedratico": 19,
+        "nombre": "Catedratico 19",
+        "noColegiado": 12345,
+        "horaEntrada": "15:00:00",
+        "horaSalida": "19:00:00"
+      },
+      "salon": {
+        "noSalon": 2,
+        "nombre": "Salon 2",
+        "capacidadMaxima": 30,
+        "capacidadRecomendada": 20,
+        "codigoCarreraPreferida": null,
+        "ubicacion": "Ubicacion 2"
+      },
+      "horaInicio": "16:00:00",
+      "horaFin": "17:00:00"
+    },
+    {
+      "idRegistro": 0,
+      "codigoHorario": 1,
+      "curso": {
+        "codigoCurso": 30,
+        "nombre": "Curso 30",
+        "semestre": 2,
+        "carrera": {
+          "codigoCarrera": 3,
+          "nombre": "Carrera 3",
+          "cantidadSemestres": 4,
+          "presupuesto": 160000,
+          "color": "#6ECF9E"
+        }
+      },
+      "catedratico": {
+        "codigoCatedratico": 20,
+        "nombre": "Catedratico 20",
+        "noColegiado": 12345,
+        "horaEntrada": "18:00:00",
+        "horaSalida": "21:00:00"
+      },
+      "salon": {
+        "noSalon": 7,
+        "nombre": "Salon 7",
+        "capacidadMaxima": 30,
+        "capacidadRecomendada": 20,
+        "codigoCarreraPreferida": 2,
+        "ubicacion": "Ubicacion 7"
+      },
+      "horaInicio": "18:00:00",
+      "horaFin": "19:00:00"
+    },
+    {
+      "idRegistro": 0,
+      "codigoHorario": 1,
+      "curso": {
+        "codigoCurso": 31,
+        "nombre": "Curso 31",
+        "semestre": 2,
+        "carrera": {
+          "codigoCarrera": 3,
+          "nombre": "Carrera 3",
+          "cantidadSemestres": 4,
+          "presupuesto": 160000,
+          "color": "#6ECF9E"
+        }
+      },
+      "catedratico": {
+        "codigoCatedratico": 15,
+        "nombre": "Catedratico 15",
+        "noColegiado": 12345,
+        "horaEntrada": "16:00:00",
+        "horaSalida": "20:00:00"
+      },
+      "salon": {
+        "noSalon": 1,
+        "nombre": "Salon 1",
+        "capacidadMaxima": 35,
+        "capacidadRecomendada": 25,
+        "codigoCarreraPreferida": null,
+        "ubicacion": "Ubicacion 1"
+      },
+      "horaInicio": "19:00:00",
+      "horaFin": "20:00:00"
+    },
+    {
+      "idRegistro": 0,
+      "codigoHorario": 1,
+      "curso": {
+        "codigoCurso": 32,
+        "nombre": "Curso 32",
+        "semestre": 2,
+        "carrera": {
+          "codigoCarrera": 3,
+          "nombre": "Carrera 3",
+          "cantidadSemestres": 4,
+          "presupuesto": 160000,
+          "color": "#6ECF9E"
+        }
+      },
+      "catedratico": {
+        "codigoCatedratico": 14,
+        "nombre": "Catedratico 14",
+        "noColegiado": 12345,
+        "horaEntrada": "13:00:00",
+        "horaSalida": "18:00:00"
+      },
+      "salon": {
+        "noSalon": 2,
+        "nombre": "Salon 2",
+        "capacidadMaxima": 30,
+        "capacidadRecomendada": 20,
+        "codigoCarreraPreferida": null,
+        "ubicacion": "Ubicacion 2"
+      },
+      "horaInicio": "14:00:00",
+      "horaFin": "15:00:00"
+    }
+  ],
+  "advertencias": [],
+  "carreras": [
+    {
+      "codigoCarrera": 1,
+      "nombre": "Carrera 1",
+      "color": "#D4B27D"
+    },
+    {
+      "codigoCarrera": 2,
+      "nombre": "Carrera 2",
+      "color": "#BBBAE8"
+    },
+    {
+      "codigoCarrera": 3,
+      "nombre": "Carrera 3",
+      "color": "#6ECF9E"
+    }
+  ],
+  "salones": [
+    {
+      "noSalon": 1,
+      "nombre": "Salon 1",
+      "capacidadMaxima": 35,
+      "capacidadRecomendada": 25,
+      "codigoCarreraPreferida": null,
+      "ubicacion": "Ubicacion 1"
+    },
+    {
+      "noSalon": 2,
+      "nombre": "Salon 2",
+      "capacidadMaxima": 30,
+      "capacidadRecomendada": 20,
+      "codigoCarreraPreferida": null,
+      "ubicacion": "Ubicacion 2"
+    },
+    {
+      "noSalon": 3,
+      "nombre": "Salon 3",
+      "capacidadMaxima": 20,
+      "capacidadRecomendada": 15,
+      "codigoCarreraPreferida": 1,
+      "ubicacion": "Ubicacion 3"
+    },
+    {
+      "noSalon": 4,
+      "nombre": "Salon 4",
+      "capacidadMaxima": 40,
+      "capacidadRecomendada": 30,
+      "codigoCarreraPreferida": null,
+      "ubicacion": "Ubicacion 4"
+    },
+    {
+      "noSalon": 5,
+      "nombre": "Salon 5",
+      "capacidadMaxima": 50,
+      "capacidadRecomendada": 40,
+      "codigoCarreraPreferida": null,
+      "ubicacion": "Ubicacion 5"
+    },
+    {
+      "noSalon": 6,
+      "nombre": "Salon 6",
+      "capacidadMaxima": 20,
+      "capacidadRecomendada": 15,
+      "codigoCarreraPreferida": null,
+      "ubicacion": "Ubicacion 6"
+    },
+    {
+      "noSalon": 7,
+      "nombre": "Salon 7",
+      "capacidadMaxima": 30,
+      "capacidadRecomendada": 20,
+      "codigoCarreraPreferida": 2,
+      "ubicacion": "Ubicacion 7"
+    },
+    {
+      "noSalon": 8,
+      "nombre": "Salon 8",
+      "capacidadMaxima": 35,
+      "capacidadRecomendada": 25,
+      "codigoCarreraPreferida": null,
+      "ubicacion": "Ubicacion 8"
+    },
+    {
+      "noSalon": 9,
+      "nombre": "Salon 9",
+      "capacidadMaxima": 45,
+      "capacidadRecomendada": 35,
+      "codigoCarreraPreferida": null,
+      "ubicacion": "Ubicacion 9"
+    },
+    {
+      "noSalon": 10,
+      "nombre": "Salon 10",
+      "capacidadMaxima": 50,
+      "capacidadRecomendada": 35,
+      "codigoCarreraPreferida": null,
+      "ubicacion": "Ubicacion 10"
+    }
+  ],
+  "horaInicio": "13:00:00",
+  "horaFin": "21:00:00",
+  "duracionPeriodo": 60,
+  "porcentajeEfectividad": 1
+}

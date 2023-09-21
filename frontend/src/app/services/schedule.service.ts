@@ -1,5 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ResponseData } from '../models/response-data';
+import { Observable } from 'rxjs';
+import { CursoHorarioDto } from '../models/curso-horario-dto';
+import { RequestData } from '../models/request-data';
 
 @Injectable({
     providedIn: 'root'
@@ -8,19 +12,23 @@ export class ScheduleService {
 
     private _urlBase = 'https://localhost:7030/scheduleAPI/Schedule';
 
-    private horario: any[];
+    private horario: ResponseData;
 
     constructor(private http: HttpClient) { }
 
-    generateSchedule() {
-        return this.http.get(this._urlBase);
+    generateSchedule(): Observable<ResponseData> {
+        return this.http.get<ResponseData>(this._urlBase);
     }
 
-    setHorario(horario: any[]) {
+    guardarHorario(data: RequestData) {
+        return this.http.post<RequestData>(this._urlBase, data);
+    }
+
+    setHorario(horario: ResponseData) {
         this.horario = horario;
     }
 
-    getHorario() {
+    getHorario(): ResponseData {
         return this.horario;
     }
 }

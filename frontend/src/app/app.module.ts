@@ -12,6 +12,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { SchedulerComponent } from './components/scheduler/scheduler.component';
 import { ManagerRoutesComponent } from './components/manager-routes/manager-routes.component';
 import { GeneretedScheduleComponent } from './components/genereted-schedule/genereted-schedule.component';
+import { HistorialComponent } from './components/historial/historial.component';
 
 @NgModule({
     declarations: [
@@ -22,7 +23,8 @@ import { GeneretedScheduleComponent } from './components/genereted-schedule/gene
         FilterPipe,
         SchedulerComponent,
         ManagerRoutesComponent,
-        GeneretedScheduleComponent
+        GeneretedScheduleComponent,
+        HistorialComponent
     ],
     imports: [
         BrowserModule,

@@ -1,4 +1,4 @@
-namespace ScheduleCore.Models.ViewModels;
+namespace ScheduleCore.Models.DTO;
 
 public class CursoDTO
 {

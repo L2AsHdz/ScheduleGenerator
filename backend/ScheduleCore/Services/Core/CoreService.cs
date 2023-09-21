@@ -1,6 +1,6 @@
 using System.Text.Json;
 using ScheduleCore.Models;
-using ScheduleCore.Models.ViewModels;
+using ScheduleCore.Models.DTO;
 using ScheduleCore.Services.Parametro;
 
 namespace ScheduleCore.Services.Core;
@@ -79,7 +79,7 @@ public class CoreService
 
         var assignedCourses = new List<CursoHorarioDTO>();
 
-        var notAssignedCourses = new List<CursoConAdvertencia>();
+        var notAssignedCourses = new List<CursoAdvertencia>();
 
         var horaActual = param.StartHour;
 
@@ -237,8 +237,9 @@ public class CoreService
 
             if (salonHorario.salon == 0)
             {
-                notAssignedCourses.Add(new CursoConAdvertencia()
+                notAssignedCourses.Add(new CursoAdvertencia()
                 {
+                    CodigoHorario = lastScheduleId + 1,
                     CodigoCurso = c.CodigoCurso,
                     Nombre = cursos.Where(c2 => c2.CodigoCurso == c.CodigoCurso).Select(c2 => c2.Nombre)
                         .FirstOrDefault()!,
@@ -283,8 +284,9 @@ public class CoreService
 
             if (catedraticoHorario == 0)
             {
-                notAssignedCourses.Add(new CursoConAdvertencia()
+                notAssignedCourses.Add(new CursoAdvertencia()
                 {
+                    CodigoHorario = lastScheduleId + 1,
                     CodigoCurso = c.CodigoCurso,
                     Nombre = cursos.Where(c2 => c2.CodigoCurso == c.CodigoCurso).Select(c2 => c2.Nombre)
                         .FirstOrDefault()!,
@@ -320,9 +322,11 @@ public class CoreService
                 Nombre = c.Nombre,
                 Color = c.Color
             }).ToList(),
+            Salones = salones,
             HoraInicio = param.StartHour,
             HoraFin = param.EndHour,
-            DuracionPeriodo = param.DurationPeriod
+            DuracionPeriodo = param.DurationPeriod,
+            PorcentajeEfectividad = assignedCourses.Count / (decimal)filteredCourses.Count
         };
         
         return data;

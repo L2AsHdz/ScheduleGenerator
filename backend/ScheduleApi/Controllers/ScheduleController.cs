@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using ScheduleCore.Models;
-using ScheduleCore.Models.ViewModels;
+using ScheduleCore.Models.DTO;
 using ScheduleCore.Services.Core;
 
 namespace ScheduleApi.Controllers;
@@ -19,13 +19,43 @@ public class ScheduleController : ControllerBase
     }
 
     [HttpGet]
-    public ActionResult<IEnumerable<CursoHorarioDTO>> Init()
+    public ActionResult<ResponseData> Init()
     {
         var horario = service.Execute();
 
         // if (!horario.Any()) return NoContent();
         
         return Ok(horario);
+    }
+    
+    [HttpPost]
+    public ActionResult<RequestData> Save([FromBody] RequestData data)
+    {
+        data.Horario.ForEach(h => context.CursoHorario.Add(new CursoHorario()
+        {
+            CodigoHorario = h.CodigoHorario,
+            CodigoCurso = h.CodigoCurso,
+            CodigoCatedratico = h.CodigoCatedratico,
+            CodigoCarrera = h.CodigoCarrera,
+            NoSalon = h.NoSalon,
+            HoraInicio = TimeOnly.Parse(h.HoraInicio),
+            HoraFin = TimeOnly.Parse(h.HoraFin)
+            
+        }));
+        
+        data.Advertencias.ForEach(a => context.CursoAdvertencia.Add(a));
+        context.SaveChanges();
+        
+        if (data is null)
+        {
+            Console.WriteLine(("BadRequest"));
+            return BadRequest("Los datos no son válidos.");
+        }
+        
+        
+        Console.WriteLine("Save");
+        
+        return Ok(data);
     }
     
 }

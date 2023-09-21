@@ -9,8 +9,13 @@ public class Curso
     public string Nombre { get; set; }
 }
 
-public class CursoConAdvertencia: Curso
+public class CursoAdvertencia
 {
+    [Key]
+    public int IdRegistro { get; set; }
+    public int CodigoHorario { get; set; }
+    public int CodigoCurso { get; set; }
+    public string Nombre { get; set; }
     public string Advertencia { get; set; }
 
     public override string ToString()

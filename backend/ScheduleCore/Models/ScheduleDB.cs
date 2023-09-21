@@ -9,6 +9,7 @@ public class ScheduleDB: DbContext
     public DbSet<Carrera> Carrera { get; set; }
     public DbSet<Catedratico> Catedratico { get; set; }
     public DbSet<Curso> Curso { get; set; }
+    public DbSet<CursoAdvertencia> CursoAdvertencia { get; set; }
     public DbSet<CursoCarrera> CursoCarrera { get; set; }
     public DbSet<CursoCatedratico> CursoCatedratico { get; set; }
     public DbSet<CursoHorario> CursoHorario { get; set; }

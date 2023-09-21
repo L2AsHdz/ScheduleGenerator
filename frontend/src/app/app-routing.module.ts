@@ -5,11 +5,13 @@ import { ConfigComponent } from './components/config/config.component';
 import { SchedulerComponent } from './components/scheduler/scheduler.component';
 import { ManagerRoutesComponent } from './components/manager-routes/manager-routes.component';
 import { GeneretedScheduleComponent } from './components/genereted-schedule/genereted-schedule.component';
+import { HistorialComponent } from './components/historial/historial.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'home', component: HomeComponent },
     { path: 'config', component: ConfigComponent },
+    { path: 'history', component: HistorialComponent },
     { path: 'scheduler', component: ManagerRoutesComponent,
         children: [
             { path: 'generate', component: SchedulerComponent },
